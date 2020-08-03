@@ -1,0 +1,28 @@
+Scenario
+
+Kayýt iþleminin textlerini boþ girilme testi + 
+Kayýt iþleminde maili uygun pattern girmeme testi +
+Kayýt iþleminde sözleþme tiki kontrol testi +
+Giriþ testini yap //zeynepturhan0@gmail.com zt123456 +
+Ürün Arama testi çikolata +
+Ürünü seçme testi ilk ürün +
+Ürün adres testi +   
+Tarih ve saat seçme testi +
+Sepet kontrolü testi +
+Adres bilgilerini doldurma testi +
+
+
+//son bölüme gitme
+Sepetten çýkarma testi
+
+
+
+
+//bazý kodlar
+/*WebElement element = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/main/div/div[1]/div[1]/div[2]/div[2]/div/button")));
+element.click();
+WebElement element2 = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"district-search-0\"]/input")));
+element2.sendKeys("Ýstanbul");
+driver.findElement(By.tagName("body")).sendKeys(Keys.ESCAPE);*/
+
+ //driver.findElement(By.id(id)).click();
