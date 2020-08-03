@@ -18,16 +18,16 @@ public class TestCases extends BaseConfigPage {
 	
 
 	@Test
-	@Information("1- Kayıt olurken null değer girildiğinde hata veriyor mu?")
+	@Information("1- KayÃ½t olurken null deÃ°er girildiÃ°inde hata veriyor mu?")
 	public void registerNullTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callRegisterPage().register("  ", " ", " ");
-		assertNotEquals(driver.findElement(By.id("NameIndivual-error")).getText(),"Bu bilginin doldurulması zorunludur.");
+		assertNotEquals(driver.findElement(By.id("NameIndivual-error")).getText(),"Bu bilginin doldurulmasÄ± zorunludur.");
 	}
 	@Test
-	@Information("2- Sözleşme onay işlemi gerçekleşti mi?")
+	@Information("2- SÃ¶zleÃ¾me onay iÃ¾lemi gerÃ§ekleÃ¾ti mi?")
 	public void checkConfirmTest() throws InterruptedException
 	{
 		new HomePage(driver);
@@ -45,52 +45,52 @@ public class TestCases extends BaseConfigPage {
 		new HomePage(driver)
 		.callRegisterPage()
 		.register("Zeynep Turhan", "zeynepturhan.com", "zt123456");
-		assertNotEquals(driver.findElement(By.id("EmailIndivual-error")).getText(),"Lütfen geçerli bir e-posta adresi giriniz.");
+		assertNotEquals(driver.findElement(By.id("EmailIndivual-error")).getText(),"LÃ¼tfen geÃ§erli bir e-posta adresi giriniz.");
 	}
 	@Test
-	@Information("4- Giriş işlemi gerçekleşti mi?")
+	@Information("4- GiriÃ¾ iÃ¾lemi gerÃ§ekleÃ¾ti mi?")
 	public void LoginTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com","zt123456");
-		assertEquals(driver.findElement(By.xpath("//span[text()='Hesabım']")).getText(),"Hesabım");
+		assertEquals(driver.findElement(By.xpath("//span[text()='HesabÄ±m']")).getText(),"HesabÄ±m");
 	}
 	@Test
-	@Information("5- Ürün arama gerçekleşti mi?")
+	@Information("5- ÃœrÃ¼n arama gerÃ§ekleÃ¾ti mi?")
 	public void searchProductTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com","zt123456")
-		.callProductPage("Çikolata");
-		assertEquals(driver.findElement(By.xpath("//h1[text()='Çikolata']")).getText(),"Çikolata");
+		.callProductPage("Ã‡ikolata");
+		assertEquals(driver.findElement(By.xpath("//h1[text()='Ã‡ikolata']")).getText(),"Ã‡ikolata");
 	}
 	@Test
-	@Information("6- Ürün seçme gerçekleşti mi?")
+	@Information("6- ÃœrÃ¼n seÃ§me gerÃ§ekleÃ¾ti mi?")
 	public void selectProductTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(1);
 	}
 	@Test
-	@Information("7- Ürün tarihi  null olduğunda hata veriyor mu?")
+	@Information("7- ÃœrÃ¼n tarihi  null olduÃ°unda hata veriyor mu?")
 	public void ProductDateTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage().
 		login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(5)
-		.productAddCardByAdress("İstanbul");
-		assertEquals(driver.findElement(By.xpath("//*[@id=\"productDetailSend\"]//div[contains(@class , 'js-product-error--date is-hidden')]")).getText(), "Lütfen tarih seçiniz.");		
+		.productAddCardByAdress("Ä°stanbul");
+		assertEquals(driver.findElement(By.xpath("//*[@id=\"productDetailSend\"]//div[contains(@class , 'js-product-error--date is-hidden')]")).getText(), "LÃ¼tfen tarih seÃ§iniz.");		
 	}
 	@Test
 	@Information("8- Sepete eklendi mi?")
@@ -100,19 +100,19 @@ public class TestCases extends BaseConfigPage {
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(5)
-		.productAddCardByAdress("İstanbul");
+		.productAddCardByAdress("Ä°stanbul");
 	}
 	@Test
-	@Information("9- Ürün sepette mi?")
+	@Information("9- ÃœrÃ¼n sepette mi?")
 	public void CardListTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		int deger = new HomePage(driver).callLoginPage().login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(5)
-		.productAddCardByAdress("İstanbul")
+		.productAddCardByAdress("Ãstanbul")
 		.callHomePage()
 		.callCardPage()
 		.CardList();
@@ -120,21 +120,21 @@ public class TestCases extends BaseConfigPage {
 		new HomePage(driver).RemoveProduct();
 	}
 	@Test
-	@Information("10- Ürün gönderim bilgileri null olduğunda hata veriyor mu")
+	@Information("10- ÃœrÃ¼n gÃ¶nderim bilgileri null olduÃ°unda hata veriyor mu")
 	public void CardInfoNullTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(5)
-		.productAddCardByAdress("İstanbul")
+		.productAddCardByAdress("Ãstanbul")
 		.callHomePage()
 		.callCardPage().CardInfo(" ", " "," ");
 		Thread.sleep(3000); //Gelince hallet
-		if(driver.findElement(By.xpath("//*[@id=\"GroupDeliveryAddressList_0__Address_AddressLine-error\"]")).getText() == "Bu bilginin doldurulması zorunludur." ||
-				driver.findElement(By.xpath("//*[@id=\"GroupDeliveryAddressList_0__Address_Phone_Phone-error\"]")).getText() == "Bu bilginin doldurulması zorunludur.")
+		if(driver.findElement(By.xpath("//*[@id=\"GroupDeliveryAddressList_0__Address_AddressLine-error\"]")).getText() == "Bu bilginin doldurulmasÄ± zorunludur." ||
+				driver.findElement(By.xpath("//*[@id=\"GroupDeliveryAddressList_0__Address_Phone_Phone-error\"]")).getText() == "Bu bilginin doldurulmasÄ± zorunludur.")
 		{
 		  assertTrue(true);
 		} 
@@ -142,53 +142,53 @@ public class TestCases extends BaseConfigPage {
 
 	}
 	@Test
-	@Information("11- Fatura Bilgileri yanlış girildiğinde hata veriyor mu?")
+	@Information("11- Fatura Bilgileri yanlÃ½Ã¾ girildiÃ°inde hata veriyor mu?")
 	public void BillNullTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(5)
-		.productAddCardByAdress("İstanbul")
+		.productAddCardByAdress("Ä°stanbul")
 		.callHomePage()
-		.callCardPage().CardInfo("Zeynep Turhan", "05422800925","İstanbul/Ümraniye").CardBillInfo(" ", " ");
-		if(driver.findElement(By.id("BuyerName-error")).getText() == "Bu bilginin doldurulması zorunludur." ||
-				driver.findElement(By.id("PhoneNumber")).getText() == "Bu bilginin doldurulması zorunludur.")
+		.callCardPage().CardInfo("Zeynep Turhan", "05422800925","Ä°stanbul/Ãœmraniye").CardBillInfo(" ", " ");
+		if(driver.findElement(By.id("BuyerName-error")).getText() == "Bu bilginin doldurulmasÃ½ zorunludur." ||
+				driver.findElement(By.id("PhoneNumber")).getText() == "Bu bilginin doldurulmasÄ± zorunludur.")
 		{
 		  assertTrue(true);
 		}
 		new HomePage(driver).RemoveProduct();
 	}
 	@Test
-	@Information("12- Bilgi girildiğinde yönlendirme yapılıyor mu?")
+	@Information("12- Bilgi girildiÃ°inde yÃ¶nlendirme yapÃ½lÃ½yor mu?")
 	public void BillInfoNavigateTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(5)
-		.productAddCardByAdress("İstanbul")
+		.productAddCardByAdress("Ä°stanbul")
 		.callHomePage()
-		.callCardPage().CardInfo("Zeynep Turhan", "05422800925","İstanbul/Ümraniye").CardBillInfo("Zeynep Turhan", "05422800925");
+		.callCardPage().CardInfo("Zeynep Turhan", "05422800925","Ä°stanbul/Ãœmraniye").CardBillInfo("Zeynep Turhan", "05422800925");
 		new HomePage(driver).RemoveProduct();
 	}
 	@Test
-	@Information("13- Ürün Sepetten çıkarıldı mı?")
+	@Information("13- ÃœrÃ¼n Sepetten Ã§Ã½karÃ½ldÃ½ mÃ½?")
 	public void DeleteProductTest() throws InterruptedException
 	{
 		new HomePage(driver);
 		new HomePage(driver)
 		.callLoginPage()
 		.login("zeynepturhan0@gmail.com", "zt123456")
-		.callProductPage("Çikolata")
+		.callProductPage("Ã‡ikolata")
 		.selectProduct(5)
-		.productAddCardByAdress("İstanbul")
+		.productAddCardByAdress("Ä°stanbul")
 		.callHomePage().callCardPage().RemoveProductToCard();
-		assertEquals(driver.findElement(By.tagName("h1")).getText() , "Sepetinizde ürün bulunmamaktadır.");
+		assertEquals(driver.findElement(By.tagName("h1")).getText() , "Sepetinizde Ã¼rÃ¼n bulunmamaktadÄ±r.");
 
 	}
 	
