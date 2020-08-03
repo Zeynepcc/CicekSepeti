@@ -1,28 +1,19 @@
 Scenario
 
-Kayıt işleminin textlerini boş girilme testi + 
-Kayıt işleminde maili uygun pattern girmeme testi +
-Kayıt işleminde sözleşme tiki kontrol testi +
-Giriş testini yap //zeynepturhan0@gmail.com zt123456 +
-Ürün Arama testi çikolata +
-Ürünü seçme testi ilk ürün +
-Ürün adres testi +   
-Tarih ve saat seçme testi +
-Sepet kontrolü testi +
-Adres bilgilerini doldurma testi +
+1- KayÄ±t olurken null deÄŸer girildiÄŸinde hata veriyor mu?
+2- SÃ¶zleÅŸme onay iÅŸlemi gerÃ§ekleÅŸti mi?
+3- Mail adresi pattern'e uygun mu?
+4- GiriÅŸ iÅŸlemi gerÃ§ekleÅŸti mi?
+5- ÃœrÃ¼n arama gerÃ§ekleÅŸti mi?
+6- ÃœrÃ¼n seÃ§me gerÃ§ekleÅŸti mi?
+7- ÃœrÃ¼n tarihi  null olduÄŸunda hata veriyor mu?
+8- Sepete eklendi mi?
+9- ÃœrÃ¼n sepette mi?
+10- ÃœrÃ¼n gÃ¶nderim bilgileri null olduÄŸunda hata veriyor mu?
+11- Fatura Bilgileri yanlÄ±ÅŸ girildiÄŸinde hata veriyor mu?
+12- Bilgi girildiÄŸinde yÃ¶nlendirme yapÄ±lÄ±yor mu?
+13- ÃœrÃ¼n Sepetten Ã§Ä±karÄ±ldÄ± mÄ±?
 
 
-//son bölüme gitme
-Sepetten çıkarma testi
 
 
-
-
-//bazı kodlar
-/*WebElement element = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/main/div/div[1]/div[1]/div[2]/div[2]/div/button")));
-element.click();
-WebElement element2 = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"district-search-0\"]/input")));
-element2.sendKeys("İstanbul");
-driver.findElement(By.tagName("body")).sendKeys(Keys.ESCAPE);*/
-
- //driver.findElement(By.id(id)).click();
